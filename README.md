@@ -3,42 +3,59 @@
 🏆 **2nd Place Winner - MinneAnalytics MUNDAC Hackathon 2025**  
 📅 Duration: One-month long challenge  
 🤝 In collaboration with: Big Brothers Big Sisters Twin Cities  
-🎯 Theme: **Using data science to improve youth mentorship outcomes**
+🎯 Theme: **Improving mentorship outcomes using structured and unstructured data**
 
 ---
 
 ## 🧠 Problem Statement
 
-Mentorship relationships can significantly boost youth educational and life outcomes. However, many mentor-mentee matches end early due to hard-to-measure emotional and behavioral factors. Our challenge was to:
+The task was to predict the **match length (in days)** for mentor-mentee relationships using structured profile data and unstructured contact notes. 
 
-- Analyze structured and unstructured data from Big Brothers Big Sisters
-- Identify early indicators of match closure
-- Recommend data-driven strategies to improve long-term mentorship outcomes
-
----
-
-## 💡 Our 3-Phase Solution
-
-### 🔹 Pre-Match
-- Clustered mentor and mentee profiles into high-potential “buckets”
-- Proposed matching strategies to optimize for long-term compatibility
-
-### 🔹 During Match
-- Applied **Natural Language Processing (NLP)** to support contact notes
-- Detected emotional signals and predicted closure reasons and timing
-- Designed a decision-tree style tool to assist staff in identifying at-risk matches early
-
-### 🔹 Post-Match
-- Suggested targeted, research-backed interventions to strengthen ongoing relationships
-- Highlighted areas where additional support could extend match duration
+The challenge involved:
+- A test set containing **match IDs with truncated meeting notes**, ending at random intervals — simulating partial visibility into match history.
+- Identifying emotional and behavioral signals hidden in text data to forecast when a match might close.
+- Designing data-driven interventions that could help prevent early match closures.
 
 ---
 
-## 🛠️ Tech Stack
+## 💡 Our Technical Solution
 
-- **Python**  
-- **Pandas, NumPy** for data manipulation  
-- **scikit-learn** for clustering and modeling  
-- **NLTK, spaCy** for natural language processing  
-- **Streamlit** (optional) for prototyping questionnaire interface  
-- **Matplotlib, Seaborn** for data visualization
+### 📌 Key Objectives
+1. Predict the duration of a match using partial interaction history.
+2. Engineer meaningful features from free-text notes.
+3. Improve model generalization under real-world imbalance and truncation scenarios.
+
+---
+
+### 🔍 3-Phase Approach
+
+#### 🔹 Pre-Match
+- Engineered clusters using mentor and mentee demographic and preference features.
+- Identified high-potential matching profiles based on historical success patterns.
+
+#### 🔹 During Match
+- **NLP pipeline** applied to contact notes to extract:
+  - Sentiment scores using **BERT-based transformers** (HuggingFace models)
+  - Emotion tone classification (e.g., frustration, satisfaction, disengagement)
+- Built custom text-based feature vectors using embeddings, sentiment, emotion frequency, and note density.
+- Developed a **custom oversampling function** to augment underrepresented match durations and handle label imbalance.
+
+#### 🔹 Modeling
+- Built a regression pipeline using **XGBoost Regressor** to predict match length.
+- Performed **cross-validation with grid search** for hyperparameter tuning.
+- Applied early stopping and feature importance tracking for model optimization.
+
+#### 🔹 Post-Match
+- Interpreted key predictors contributing to early closures.
+- Suggested staff-facing tools for early intervention and dynamic resource allocation.
+
+---
+
+## ⚙️ Tech Stack
+
+- **Python 3.9**
+- **Pandas, NumPy, scikit-learn** for data processing and modeling
+- **XGBoost** for final regression model
+- **HuggingFace Transformers (BERT)** for NLP sentiment/emotion extraction
+- **NLTK, spaCy** for preprocessing
+- **Matplotlib, Seaborn** for EDA and visualizations
