@@ -9,7 +9,7 @@
 
 ## 🧠 Problem Statement
 
-The task was to predict the **match length (in days)** for mentor-mentee relationships using structured profile data and unstructured contact notes. 
+The task was to predict the **match length (in months)** for mentor-mentee relationships using structured profile data and unstructured contact notes. 
 
 The challenge involved:
 - A test set containing **match IDs with truncated meeting notes**, ending at random intervals — simulating partial visibility into match history.
