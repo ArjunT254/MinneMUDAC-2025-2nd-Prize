@@ -1,4 +1,4 @@
-# MUNDAC Hackathon - Push To Prod 🚀
+# MinneMUDAC Hackathon - Push To Prod 🚀
 
 🏆 **2nd Place Winner - MinneAnalytics MUNDAC Hackathon 2025**  
 📅 Duration: One-month long challenge  
