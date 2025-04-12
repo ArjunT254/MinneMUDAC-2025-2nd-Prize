@@ -1,6 +1,6 @@
 # MinneMUDAC Hackathon - Push To Prod 🚀
 
-🏆 **2nd Place Winner - MinneAnalytics MUNDAC Hackathon 2025**  
+🏆 **2nd Place Winner - MinneAnalytics MUDAC Hackathon 2025**  
 📅 Duration: One-month long challenge  
 🤝 In collaboration with: Big Brothers Big Sisters Twin Cities  
 🎯 Theme: **Improving mentorship outcomes using structured and unstructured data**
